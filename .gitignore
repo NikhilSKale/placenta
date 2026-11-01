@@ -1,0 +1,38 @@
+# Root gitignore for the Placenta project
+# General OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+$PYTHONPATH
+venv/
+.env
+*.sqlite3
+*.db
+
+# Poetry / pipenv (not used but safe)
+poetry.lock
+Pipfile.lock
+
+# Virtual environment folders
+.env/
+
+# Local storage (database, vector store, uploads)
+storage/
+vesit_policy/
+
+# Logs
+*.log
+
+# IDE / editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# MacOS specific
+.AppleDouble
+.LSOverride
+

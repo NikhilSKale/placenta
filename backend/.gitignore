@@ -1,0 +1,19 @@
+# Python backend .gitignore
+# Virtual environment
+venv/
+# Python bytecode
+__pycache__/
+*.py[cod]
+# Environment variables
+.env
+# Local SQLite DB
+*.sqlite3
+*.db
+# ChromaDB storage (should be ignored if not needed in repo)
+storage/
+# Logs
+*.log
+# IDE files
+.idea/
+.vscode/
+

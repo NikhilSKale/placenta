@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Prose dark mode overrides for react-markdown */
+.prose {
+  color: #e2e8f0;
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #f1f5f9;
+}
+.prose strong {
+  color: #f1f5f9;
+}
+.prose code {
+  background: #1e293b;
+  color: #a5b4fc;
+  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+.prose pre {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+.prose a {
+  color: #6366f1;
+}
+.prose blockquote {
+  border-left-color: #6366f1;
+  color: #94a3b8;
+}
+.prose ul li::marker {
+  color: #6366f1;
+}
+.prose ol li::marker {
+  color: #6366f1;
+}
+.prose hr {
+  border-color: #334155;
+}
+.prose table thead th {
+  color: #f1f5f9;
+  border-color: #334155;
+}
+.prose table tbody td {
+  border-color: #334155;
+}
+.prose table tbody tr:nth-child(even) {
+  background: #1e293b;
+}
