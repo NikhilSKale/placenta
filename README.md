@@ -1,4 +1,4 @@
-# 🎓 Placenta — VESIT Placement Experience & Policy Intelligence Platform
+# ðŸŽ“ Placenta â€” VESIT Placement Experience & Policy Intelligence Platform
 
 **Placenta** is a production-grade, local-first Retrieval-Augmented Generation (RAG) platform built for **Vivekanand Education Society's Institute of Technology (VESIT)**.
 
@@ -6,7 +6,7 @@ It empowers students and placement coordinators to query previous students' plac
 
 ---
 
-## 🌟 Key Capabilities
+## ðŸŒŸ Key Capabilities
 
 1. **Strict Evidence-Grounded RAG**: Every factual answer is strictly sourced from indexed student placement experiences or the official VESIT policy handbook. If information is absent, the system explicitly abstains rather than hallucinating.
 2. **Company & Policy Isolation**: Prevents fact leakage between companies. IVP's assessment pattern is never confused with Network Marvels or ISS Stoxx.
@@ -18,7 +18,7 @@ It empowers students and placement coordinators to query previous students' plac
 
 ---
 
-## 🛠️ Technology Stack
+## ðŸ› ï¸ Technology Stack
 
 | Layer | Technologies |
 |---|---|
@@ -31,66 +31,66 @@ It empowers students and placement coordinators to query previous students' plac
 
 ---
 
-## 📂 Project Structure
+## ðŸ“‚ Project Structure
 
 ```text
 project/
-├── backend/
-│   ├── app/
-│   │   ├── api/                 # FastAPI REST routers (chat, docs, companies, dashboard, rag, policy)
-│   │   ├── core/                # Logging, custom exceptions, error handlers
-│   │   ├── database/            # SQLAlchemy database engine, session, and init
-│   │   ├── models/              # Relational models (Documents, Chunks, Facts, Rounds, Questions)
-│   │   ├── schemas/             # Pydantic request/response validation schemas
-│   │   └── services/
-│   │       ├── ingestion/       # PDF parsing, structure-aware chunking, file validation
-│   │       ├── extraction/      # Rule-based structured fact extractor
-│   │       ├── embeddings/      # Sentence-transformers embedder + ChromaDB client
-│   │       ├── retrieval/       # Vector store & Hybrid dense + BM25 retriever
-│   │       └── rag/             # Query classifier, grounded generation & citation builder
-│   ├── tests/                   # Pytest automated test suite (test_rag.py, test_api.py)
-│   ├── requirements.txt         # Python dependencies
-│   └── .env.example             # Backend configuration
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/          # Layout, Topbar, Sidebar, UI components
-│   │   ├── pages/               # Overview, Chat, Documents, Companies, Analytics, RAGExplorer, Policy, Settings
-│   │   ├── services/api.ts      # Typed REST API client
-│   │   ├── types/index.ts       # TypeScript domain models
-│   │   └── App.tsx              # Router setup
-│   ├── package.json
-│   └── vite.config.ts
-│
-├── placement_experience/        # Original student placement experience PDFs
-├── vesit_policy/                # Official VESIT placement policy PDF
-├── storage/                     # Persistent SQLite DB and ChromaDB vector store
-├── .env.example
-└── README.md
+â”œâ”€â”€ backend/
+â”‚   â”œâ”€â”€ app/
+â”‚   â”‚   â”œâ”€â”€ api/                 # FastAPI REST routers (chat, docs, companies, dashboard, rag, policy)
+â”‚   â”‚   â”œâ”€â”€ core/                # Logging, custom exceptions, error handlers
+â”‚   â”‚   â”œâ”€â”€ database/            # SQLAlchemy database engine, session, and init
+â”‚   â”‚   â”œâ”€â”€ models/              # Relational models (Documents, Chunks, Facts, Rounds, Questions)
+â”‚   â”‚   â”œâ”€â”€ schemas/             # Pydantic request/response validation schemas
+â”‚   â”‚   â””â”€â”€ services/
+â”‚   â”‚       â”œâ”€â”€ ingestion/       # PDF parsing, structure-aware chunking, file validation
+â”‚   â”‚       â”œâ”€â”€ extraction/      # Rule-based structured fact extractor
+â”‚   â”‚       â”œâ”€â”€ embeddings/      # Sentence-transformers embedder + ChromaDB client
+â”‚   â”‚       â”œâ”€â”€ retrieval/       # Vector store & Hybrid dense + BM25 retriever
+â”‚   â”‚       â””â”€â”€ rag/             # Query classifier, grounded generation & citation builder
+â”‚   â”œâ”€â”€ tests/                   # Pytest automated test suite (test_rag.py, test_api.py)
+â”‚   â”œâ”€â”€ requirements.txt         # Python dependencies
+â”‚   â””â”€â”€ .env.example             # Backend configuration
+â”‚
+â”œâ”€â”€ frontend/
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ components/          # Layout, Topbar, Sidebar, UI components
+â”‚   â”‚   â”œâ”€â”€ pages/               # Overview, Chat, Documents, Companies, Analytics, RAGExplorer, Policy, Settings
+â”‚   â”‚   â”œâ”€â”€ services/api.ts      # Typed REST API client
+â”‚   â”‚   â”œâ”€â”€ types/index.ts       # TypeScript domain models
+â”‚   â”‚   â””â”€â”€ App.tsx              # Router setup
+â”‚   â”œâ”€â”€ package.json
+â”‚   â””â”€â”€ vite.config.ts
+â”‚
+â”œâ”€â”€ placement_experience/        # Original student placement experience PDFs
+â”œâ”€â”€ vesit_policy/                # Official VESIT placement policy PDF
+â”œâ”€â”€ storage/                     # Persistent SQLite DB and ChromaDB vector store
+â”œâ”€â”€ .env.example
+â””â”€â”€ README.md
 ```
 
 ---
 
-## 🚀 How to Run the Project
+## ðŸš€ How to Run the Project
 
 **Note:** The repository includes appropriate `.gitignore` files for both backend and frontend. Ensure you do not commit generated files such as virtual environments, `node_modules`, the `storage/` directory, or any generated `.env` files.
 
 ---
-## 📦 Repository Setup (GitHub)
+## ðŸ“¦ Repository Setup (GitHub)
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/NikhilSKale/placenta.git
    cd placenta
    ```
-2. **Install backend dependencies** (inside `project/backend`):
+2. **Install backend dependencies** (inside `backend`):
    ```bash
-   cd project/backend
+   cd backend
    python3 -m venv venv
-   source venv/bin/activate
+   .\venv\Scripts\activate (Windows) / source venv/bin/activate (macOS)
    pip install -r requirements.txt
    ```
-3. **Install frontend dependencies** (inside `project/frontend`):
+3. **Install frontend dependencies** (inside `frontend`):
    ```bash
    cd ../frontend
    npm install
@@ -98,16 +98,16 @@ project/
 4. **Run the application** as described in the original "How to Run the Project" section.
 
 The `.gitignore` files ensure that sensitive or large generated artefacts are not tracked:
-- `project/.gitignore` – top‑level ignores OS artefacts, the `storage/` directory, and IDE files.
-- `project/backend/.gitignore` – Python‑specific ignores (`venv/`, `__pycache__/`, `.env`, database files).
-- `project/frontend/.gitignore` – Node‑specific ignores (`node_modules/`, `dist/`, local env files).
+- `project/.gitignore` â€“ topâ€‘level ignores OS artefacts, the `storage/` directory, and IDE files.
+- `backend/.gitignore` â€“ Pythonâ€‘specific ignores (`venv/`, `__pycache__/`, `.env`, database files).
+- `frontend/.gitignore` â€“ Nodeâ€‘specific ignores (`node_modules/`, `dist/`, local env files).
 
 Feel free to adjust the ignore patterns if you add other generated directories.
 
 
 ### Prerequisites
 
-- **Python 3.10+** (Python 3.11–3.14 supported)
+- **Python 3.10+** (Python 3.11â€“3.14 supported)
 - **Node.js v18+** and `npm`
 - *(Optional, for generative AI answers)* **Ollama**: [Download Ollama](https://ollama.com/)
 
@@ -115,16 +115,16 @@ Feel free to adjust the ignore patterns if you add other generated directories.
 
 ### Step 1: Start the Backend Server
 
-1. Open a terminal and navigate to `project/backend`:
+1. Open a terminal and navigate to `backend`:
    ```bash
-   cd project/backend
+   cd backend
    ```
 
 2. Activate the virtual environment (created during setup):
    ```bash
-   source venv/bin/activate
+   .\venv\Scripts\activate (Windows) / source venv/bin/activate (macOS)
    ```
-   *(If creating a fresh environment: `python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt`)*
+   *(If creating a fresh environment: `python3 -m venv venv && .\venv\Scripts\activate (Windows) / source venv/bin/activate (macOS) && pip install -r requirements.txt`)*
 
 3. Start the FastAPI backend server:
    ```bash
@@ -141,9 +141,9 @@ Feel free to adjust the ignore patterns if you add other generated directories.
 
 ### Step 2: Start the Frontend Application
 
-1. Open a second terminal and navigate to `project/frontend`:
+1. Open a second terminal and navigate to `frontend`:
    ```bash
-   cd project/frontend
+   cd frontend
    ```
 
 2. Install dependencies (if not already installed):
@@ -157,7 +157,7 @@ Feel free to adjust the ignore patterns if you add other generated directories.
    ```
 
 4. Open your browser at:
-   👉 **[http://localhost:5173](http://localhost:5173)**
+   ðŸ‘‰ **[http://localhost:5173](http://localhost:5173)**
 
 ---
 
@@ -176,13 +176,13 @@ Placenta includes a graceful fallback that displays retrieved evidence directly 
 
 ---
 
-## 🧪 Running Automated Tests
+## ðŸ§ª Running Automated Tests
 
 Run the backend unit and integration test suite:
 
 ```bash
-cd project/backend
-source venv/bin/activate
+cd backend
+.\venv\Scripts\activate (Windows) / source venv/bin/activate (macOS)
 PYTHONPATH=. pytest tests/ -v
 ```
 
@@ -194,13 +194,13 @@ All 13 test scenarios verify:
 
 ---
 
-## 💡 Sample Test Queries
+## ðŸ’¡ Sample Test Queries
 
 Try entering these in the **AI Assistant** or **RAG Explorer**:
 
 | Query | Expected Grounded Behavior |
 |---|---|
-| *"What was the IVP online assessment pattern?"* | Returns the exact breakdown: 12 aptitude, 27 technical MCQs, 2 coding questions, citing IVP PDF (Pages 1–3). |
+| *"What was the IVP online assessment pattern?"* | Returns the exact breakdown: 12 aptitude, 27 technical MCQs, 2 coding questions, citing IVP PDF (Pages 1â€“3). |
 | *"What coding question was asked at Network Marvels?"* | Returns the documented string manipulation question without leaking IVP's coding problems. |
 | *"What was the aptitude test pattern for Nomura?"* | Abstains / clarifies that Nomura had a hackathon-based evaluation (executive summary + presentation), not an aptitude test. |
 | *"What was the internship stipend at ISS?"* | States that internship stipend is not documented in the available ISS Stoxx experiences. |
@@ -209,7 +209,7 @@ Try entering these in the **AI Assistant** or **RAG Explorer**:
 
 ---
 
-## 🔒 Privacy & Security
+## ðŸ”’ Privacy & Security
 
 - **Local Storage**: All files, vector stores, and relational records reside on your local machine (`storage/`).
 - **Path Traversal Protection**: Uploaded filenames are sanitized and validated against allowed extensions (`.pdf`, `.docx`, `.txt`, `.md`).
