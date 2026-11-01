@@ -36,3 +36,6 @@ vesit_policy/
 .AppleDouble
 .LSOverride
 
+
+# Ignore student placement experience PDFs to protect privacy
+placement_experience/*.pdf

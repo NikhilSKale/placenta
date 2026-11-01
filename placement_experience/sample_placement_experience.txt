@@ -1,0 +1,35 @@
+Sample VESIT Placement Experience (Anonymized)
+
+Company: Acme Tech Solutions
+Job Role: Graduate Software Engineer
+Location: Mumbai, India
+Drive Date: August 2024
+Fixed CTC: 8.5 LPA
+Total CTC: 10.0 LPA
+Internship Stipend: 35,000 per month
+Internship Duration: 6 months
+PPO Offered: Yes
+Eligibility: CGPA 7.0+, No active backlogs, Branches: CMPN, INFT, EXTC.
+
+Selection Process:
+Round 1: Online Assessment (60 mins)
+- 20 Aptitude & Logical Reasoning MCQs
+- 10 Core CS Fundamentals (DBMS, OS, OOPs)
+- 2 Coding Questions:
+  1. Reverse Words in a String
+  2. Longest Substring Without Repeating Characters
+
+Round 2: Technical Interview (45 mins)
+- Explain Final Year Project architecture.
+- Difference between B-Tree and B+ Tree indexing in PostgreSQL.
+- SQL query to find 2nd highest salary using window functions (`DENSE_RANK()`).
+- Live coding: Implement LRU Cache or explain HashMap collision resolution.
+
+Round 3: HR & Management Round (20 mins)
+- Behavioral questions (STAR format): "Tell me about a challenging conflict in a team project."
+- Willingness to relocate.
+- Discussion on compensation breakdown and joining date.
+
+Tips for Juniors:
+- Focus heavily on Data Structures, OOP principles, and clean SQL queries.
+- Be thorough with everything mentioned on your resume.
