@@ -8,7 +8,7 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import chat, companies, dashboard, documents, health, policy, rag
+from app.api import chat, companies, dashboard, documents, health, observability_api, policy, rag
 from app.config import settings
 from app.core.exceptions import register_exception_handlers
 from app.core.logging import get_logger
@@ -45,7 +45,7 @@ async def _startup_ingest():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan: init DB and scan documents on startup."""
-    logger.info("Initialising database schema …")
+    logger.info("Initialising database schema â€¦")
     init_db()
     logger.info("Database ready.")
 
@@ -53,7 +53,7 @@ async def lifespan(app: FastAPI):
     Path(settings.CHROMA_PATH).mkdir(parents=True, exist_ok=True)
     Path(settings.UPLOADS_PATH).mkdir(parents=True, exist_ok=True)
 
-    logger.info("Running startup document ingestion …")
+    logger.info("Running startup document ingestion â€¦")
     await asyncio.to_thread(_startup_ingest_sync)
 
     yield
@@ -68,13 +68,13 @@ def _startup_ingest_sync():
     db = SessionLocal()
     try:
         pipeline = IngestionPipeline(db=db)
-        logger.info("Scanning %s …", settings.PLACEMENT_EXPERIENCE_PATH)
+        logger.info("Scanning %s â€¦", settings.PLACEMENT_EXPERIENCE_PATH)
         docs = pipeline.scan_and_ingest_directory(
             settings.PLACEMENT_EXPERIENCE_PATH, doc_type="placement_experience"
         )
         logger.info("Placement experiences processed: %d", len(docs))
 
-        logger.info("Scanning %s …", settings.POLICY_PATH)
+        logger.info("Scanning %s â€¦", settings.POLICY_PATH)
         pol = pipeline.scan_and_ingest_directory(
             settings.POLICY_PATH, doc_type="policy"
         )
@@ -86,13 +86,13 @@ def _startup_ingest_sync():
 
 
 app = FastAPI(
-    title="Placenta — VESIT Placement Intelligence API",
+    title="Placenta â€” VESIT Placement Intelligence API",
     description="RAG-powered placement experience and policy assistant for VESIT.",
     version="1.0.0",
     lifespan=lifespan,
 )
 
-# ── CORS ──────────────────────────────────────────────────────────────────────
+# â”€â”€ CORS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.CORS_ORIGINS,
@@ -101,16 +101,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Exception handlers ────────────────────────────────────────────────────────
+# â”€â”€ Exception handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 register_exception_handlers(app)
 
-# ── Routers ───────────────────────────────────────────────────────────────────
+# â”€â”€ Routers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app.include_router(health.router, prefix="/api", tags=["health"])
 app.include_router(chat.router, prefix="/api", tags=["chat"])
 app.include_router(documents.router, prefix="/api", tags=["documents"])
 app.include_router(companies.router, prefix="/api", tags=["companies"])
 app.include_router(dashboard.router, prefix="/api", tags=["dashboard"])
 app.include_router(rag.router, prefix="/api", tags=["rag"])
+app.include_router(observability_api.router, prefix="/api", tags=["observability"])
 app.include_router(policy.router, prefix="/api", tags=["policy"])
 
 

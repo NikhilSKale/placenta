@@ -81,7 +81,7 @@ class EmbeddingService:
         except Exception as e:
             logger.warning("Auto-repair of ChromaDB config skipped: %s", e)
 
-    # ── Public API ────────────────────────────────────────────────────────────
+    # â”€â”€ Public API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     def get_or_create_collection(self, name: str):
         """Get or create a ChromaDB collection with cosine distance."""
@@ -107,6 +107,9 @@ class EmbeddingService:
             raise RuntimeError("Embedding model not loaded")
         embeddings = self._model.encode(texts, show_progress_bar=False, batch_size=32)
         return embeddings.tolist()
+
+    def embed_query(self, text: str) -> List[float]:
+        return self.embed([text])[0]
 
     def upsert_chunks(
         self,
