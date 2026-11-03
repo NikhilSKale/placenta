@@ -16,7 +16,7 @@ function SourceCard({ source }: { source: SourceCitation }) {
       <div className="flex items-center gap-1.5 text-slate-400">
         <FileText className="w-3 h-3 flex-shrink-0" />
         <span className="font-medium text-slate-300 truncate">{source.filename}</span>
-        {source.page && <span className="text-slate-500">· p.{source.page}</span>}
+        {source.page && <span className="text-slate-500">Â· p.{source.page}</span>}
       </div>
       {source.company && (
         <div className="flex items-center gap-1 text-accent text-[10px]">
@@ -212,7 +212,7 @@ export default function Chat() {
         prev.slice(0, -1).concat([{
           id: Date.now().toString(),
           role: 'assistant' as const,
-          content: `❌ Error: ${errMsg}. Please ensure the backend is running at http://localhost:8000.`,
+          content: `âŒ Error: ${errMsg}. Please ensure the backend is running at http://localhost:8000.`,
           created_at: new Date().toISOString(),
           error: true,
         }])
@@ -289,7 +289,7 @@ export default function Chat() {
           <input
             value={filterCompany}
             onChange={e => setFilterCompany(e.target.value)}
-            placeholder="Filter by company…"
+            placeholder="Filter by companyâ€¦"
             className="bg-dark-bg border border-dark-border rounded-lg px-2 py-1 text-xs text-slate-300 placeholder-slate-600 focus:outline-none focus:border-primary w-40"
           />
         </div>
@@ -355,7 +355,7 @@ export default function Chat() {
               onKeyDown={e => {
                 if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send() }
               }}
-              placeholder="Ask about placement experiences, interview questions, VESIT policy…"
+              placeholder="Ask about placement experiences, interview questions, VESIT policyâ€¦"
               rows={2}
               className="flex-1 resize-none bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary transition-colors"
             />
@@ -368,7 +368,7 @@ export default function Chat() {
             </button>
           </div>
           <p className="text-[10px] text-slate-600 mt-1.5 text-center">
-            Answers grounded in indexed placement documents · Shift+Enter for new line
+            Answers grounded in indexed placement documents Â· Shift+Enter for new line
           </p>
         </div>
       </div>
